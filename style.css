@@ -1,0 +1,1814 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: slideDownNav 0.6s ease-out;
+}
+
+@keyframes slideDownNav {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: logoGlow 3s ease-in-out infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: #667eea;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background: rgba(102, 126, 234, 0.1);
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(102, 126, 234, 0.2);
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.dark-mode-toggle:active {
+    transform: scale(0.95) rotate(0deg);
+}
+
+.toggle-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover .toggle-icon {
+    transform: rotate(-15deg);
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+}
+
+.section-text {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Cards */
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    color: #667eea;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card:hover h3 {
+    transform: translateX(5px);
+    color: #764ba2;
+}
+
+/* SOS Section */
+.sos-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.sos-button-container {
+    margin: 3rem 0;
+}
+
+.sos-button {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    border: none;
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: visible;
+}
+
+.sos-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(231, 76, 60, 0.3);
+    transform: translate(-50%, -50%) scale(1);
+    animation: ripple 2s ease-out infinite;
+    pointer-events: none;
+}
+
+.sos-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(231, 76, 60, 0.2);
+    transform: translate(-50%, -50%) scale(1);
+    animation: ripple 2s ease-out infinite 0.5s;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.emergency-info {
+    margin-top: 3rem;
+}
+
+.contact-card {
+    background: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.contact-card:hover {
+    transform: translateX(10px);
+    border-left-color: #e74c3c;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+}
+
+/* Map Section */
+.map-section {
+    padding: 2rem 0;
+}
+
+.map-controls {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.layer-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.layer-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.layer-toggle input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #667eea;
+    transition: transform 0.2s ease;
+}
+
+.layer-toggle input[type="checkbox"]:checked {
+    transform: scale(1.2);
+}
+
+/* Location Button */
+.location-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.location-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.location-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.location-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.location-btn:active {
+    transform: translateY(0);
+}
+
+.location-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.location-icon {
+    font-size: 1.2rem;
+    animation: locationIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes locationIconPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Location Status Message */
+.location-status {
+    display: none;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    animation: slideDown 0.5s ease-out;
+}
+
+.location-status.info {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+}
+
+.location-status.success {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: white;
+}
+
+.location-status.error {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.map-container {
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+    position: relative;
+    margin: 2rem 0;
+    overflow: hidden;
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.map-container::before {
+    content: 'Loading map...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #667eea;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.map-container .gm-style {
+    border-radius: 10px;
+}
+
+.map-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.marker-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.marker-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.5;
+    transform: translate(-50%, -50%);
+    animation: markerPulse 2s ease-out infinite;
+    z-index: -1;
+}
+
+@keyframes markerPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.marker-icon:hover {
+    transform: scale(1.3);
+    z-index: 10;
+}
+
+.marker-icon:hover::after {
+    animation: none;
+}
+
+.marker-icon.flood {
+    background: #3498db;
+}
+
+.marker-icon.wind {
+    background: #f39c12;
+}
+
+.marker-icon.river {
+    background: #27ae60;
+}
+
+/* User Location Marker */
+.marker-icon.user-location-icon {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.5);
+    animation: userLocationPulse 2s ease-in-out infinite;
+}
+
+.map-marker.user-location {
+    z-index: 100;
+}
+
+@keyframes userLocationPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(231, 76, 60, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.8);
+    }
+}
+
+.marker-icon.user-location-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(231, 76, 60, 0.3);
+    transform: translate(-50%, -50%);
+    animation: userLocationRipple 2s ease-out infinite;
+    z-index: -1;
+}
+
+@keyframes userLocationRipple {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+.user-location-tooltip {
+    background: rgba(231, 76, 60, 0.95) !important;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    padding: 0.75rem 1rem;
+}
+
+.user-location-tooltip strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+/* Weather Section */
+.weather-section {
+    padding: 2rem 0;
+}
+
+.weather-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.weather-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.weather-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.weather-card:hover::before {
+    opacity: 1;
+}
+
+.weather-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.weather-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+    margin-top: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.weather-card:hover .weather-value {
+    transform: scale(1.1);
+    color: #764ba2;
+}
+
+.rainfall-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.rainfall-chart {
+    width: 100%;
+    height: 300px;
+}
+
+/* Predict Section */
+.prediction-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2), 0 4px 8px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-input:not(:placeholder-shown):valid {
+    border-color: #27ae60;
+}
+
+.form-input:not(:placeholder-shown):invalid:not(:focus) {
+    border-color: #e74c3c;
+    animation: shakeInput 0.5s ease;
+}
+
+@keyframes shakeInput {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.submit-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.submit-button span {
+    position: relative;
+    z-index: 1;
+}
+
+.risk-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.risk-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.risk-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: inherit;
+    transition: width 0.4s ease;
+}
+
+.risk-card:hover::after {
+    width: 100%;
+    opacity: 0.05;
+}
+
+.risk-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.risk-card.low {
+    border-left: 5px solid #27ae60;
+}
+
+.risk-card.medium {
+    border-left: 5px solid #f39c12;
+}
+
+.risk-card.high {
+    border-left: 5px solid #e74c3c;
+}
+
+.risk-level {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    display: inline-block;
+}
+
+.risk-card:hover .risk-level {
+    transform: scale(1.15);
+    font-size: 1.7rem;
+}
+
+.risk-card.low .risk-level {
+    color: #27ae60;
+}
+
+.risk-card.medium .risk-level {
+    color: #f39c12;
+}
+
+.risk-card.high .risk-level {
+    color: #e74c3c;
+}
+
+/* Alert Banner */
+.alert-section {
+    margin: 2rem 0;
+}
+
+.alert-banner {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.alert-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: alertShine 3s ease-in-out infinite;
+}
+
+@keyframes alertShine {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.alert-banner.warning {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    animation: alertPulse 2s ease-in-out infinite;
+}
+
+@keyframes alertPulse {
+    0%, 100% {
+        box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(231, 76, 60, 0.6);
+    }
+}
+
+/* ============================================
+   ANIMATIONS SECTION
+   ============================================ */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Page Load Animations - Fade in + Slide up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply to sections */
+.section-heading {
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    animation: underlineExpand 1s ease-out 0.5s forwards;
+}
+
+@keyframes underlineExpand {
+    to {
+        width: 100px;
+    }
+}
+
+.section-text {
+    animation: fadeInUp 0.9s ease-out;
+}
+
+.cards-section .card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.cards-section .card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.cards-section .card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.cards-section .card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.cards-section .card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.weather-cards .weather-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.weather-cards .weather-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.weather-cards .weather-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.weather-cards .weather-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.risk-cards .risk-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.risk-cards .risk-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.risk-cards .risk-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.risk-cards .risk-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.contact-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.contact-card:nth-of-type(1) {
+    animation-delay: 0.1s;
+}
+
+.contact-card:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.contact-card:nth-of-type(3) {
+    animation-delay: 0.3s;
+}
+
+.prediction-form {
+    animation: fadeInUp 0.7s ease-out;
+}
+
+/* Navigation Hover Animations */
+@keyframes underlineSlide {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #667eea;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Active page indicator animation */
+.nav-link.active {
+    animation: activePulse 2s ease-in-out infinite;
+}
+
+@keyframes activePulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* SOS Button Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 30px rgba(231, 76, 60, 0.6);
+    }
+}
+
+@keyframes pulseIntense {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+    }
+    50% {
+        transform: scale(1.15);
+        box-shadow: 0 10px 50px rgba(231, 76, 60, 0.9);
+    }
+}
+
+@keyframes emergencyClick {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(0.85) rotate(-5deg);
+    }
+    50% {
+        transform: scale(0.9) rotate(5deg);
+    }
+    75% {
+        transform: scale(1.1) rotate(-3deg);
+    }
+    100% {
+        transform: scale(1.05) rotate(0deg);
+    }
+}
+
+@keyframes sosGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.sos-button {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.sos-button:hover {
+    animation: pulseIntense 0.8s ease-in-out infinite;
+}
+
+.sos-button:active {
+    animation: emergencyClick 0.4s ease;
+}
+
+.sos-button:hover {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    animation: pulseIntense 0.8s ease-in-out infinite, sosGlow 1.5s ease-in-out infinite;
+}
+
+/* Alert & Warning Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.alert-banner {
+    animation: slideDown 0.5s ease-out, shake 0.5s ease-out 0.5s;
+}
+
+/* Risk Card Color Transitions */
+@keyframes colorTransition {
+    from {
+        border-left-color: #ddd;
+    }
+}
+
+.risk-card {
+    transition: border-left-color 0.5s ease, background-color 0.5s ease;
+}
+
+.risk-card.low {
+    border-left-color: #27ae60;
+}
+
+.risk-card.medium {
+    border-left-color: #f39c12;
+}
+
+.risk-card.high {
+    border-left-color: #e74c3c;
+}
+
+/* Map Marker Animations */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.map-marker {
+    animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation-fill-mode: both;
+}
+
+.map-marker:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.map-marker:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.map-marker:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.map-marker.hidden {
+    opacity: 0 !important;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0) !important;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+    pointer-events: none;
+}
+
+.map-marker:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Weather & Graph Animations */
+.rainfall-section {
+    animation: fadeInScale 0.8s ease-out 0.3s both;
+}
+
+.rainfall-chart {
+    transition: transform 0.3s ease;
+}
+
+.rainfall-section:hover .rainfall-chart {
+    transform: scale(1.02);
+}
+
+/* Form Input Focus Animation */
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Button Hover Animations */
+.submit-button:hover {
+    transform: scale(1.05);
+    background: #5568d3;
+}
+
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+/* Page Transition Classes */
+@keyframes pageFadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.page-fade-out {
+    animation: pageFadeOut 0.4s ease-out forwards;
+}
+
+.page-fade-in {
+    animation: pageFadeIn 0.6s ease-out forwards;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Animation for Dynamic Content */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Enhanced Card Icon Animations */
+.card h3::before {
+    content: '→';
+    display: inline-block;
+    margin-right: 0.5rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.card:hover h3::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Number Counter Animation */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather-value,
+.risk-level {
+    animation: countUp 0.8s ease-out;
+}
+
+/* Staggered Animation for Lists */
+.emergency-info h3 {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.contact-card:nth-of-type(1) {
+    animation: slideInRight 0.6s ease-out 0.2s both;
+}
+
+.contact-card:nth-of-type(2) {
+    animation: slideInRight 0.6s ease-out 0.4s both;
+}
+
+.contact-card:nth-of-type(3) {
+    animation: slideInRight 0.6s ease-out 0.6s both;
+}
+
+/* Ripple Effect for SOS Button */
+.sos-button .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: rippleAnimation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.sos-button.clicked {
+    animation: emergencyClick 0.4s ease;
+}
+
+/* Notification Styles */
+.notification {
+    animation: slideInRight 0.5s ease-out;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+}
+
+.notification.warning {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+/* Marker Tooltip */
+.marker-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.marker-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Form Error Message */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+/* Enhanced Card Animations */
+.card.animate-in {
+    animation-play-state: running;
+}
+
+/* Smooth Number Animation */
+@keyframes numberCount {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather-value.animating,
+.risk-level.animating {
+    animation: numberCount 0.5s ease-out;
+}
+
+/* Loading State */
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.submit-button:disabled::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Enhanced Hover States */
+.nav-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scroll Reveal Animation */
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    animation: reveal 0.6s ease-out forwards;
+}
+
+/* Pulse Animation for Active States */
+@keyframes gentlePulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Enhanced Focus States */
+.form-input:focus,
+.form-input:focus-visible {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2), 0 4px 8px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Smooth Transitions for All Interactive Elements */
+button,
+a,
+input,
+select,
+.card,
+.weather-card,
+.risk-card,
+.contact-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent Layout Shift During Animations */
+.card,
+.weather-card,
+.risk-card {
+    will-change: transform;
+}
+
+/* Performance Optimization */
+* {
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background: rgba(26, 26, 46, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .logo {
+    color: #8b9aff;
+    background: linear-gradient(135deg, #8b9aff 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.dark-mode .nav-link {
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-link:hover {
+    color: #8b9aff;
+}
+
+body.dark-mode .nav-link.active {
+    color: #8b9aff;
+}
+
+body.dark-mode .nav-link::after {
+    background: #8b9aff;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: rgba(139, 154, 255, 0.2);
+    border-color: #8b9aff;
+    color: #8b9aff;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background: rgba(139, 154, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(139, 154, 255, 0.4);
+}
+
+body.dark-mode .section-heading {
+    color: #ffffff;
+}
+
+body.dark-mode .section-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .card {
+    background: #2a2a3e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    border-color: rgba(139, 154, 255, 0.3);
+}
+
+body.dark-mode .card h3 {
+    color: #8b9aff;
+}
+
+body.dark-mode .card:hover h3 {
+    color: #a78bfa;
+}
+
+body.dark-mode .sos-button {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.5);
+}
+
+body.dark-mode .contact-card {
+    background: #2a2a3e;
+    color: #e0e0e0;
+    border-left-color: #e74c3c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .contact-card:hover {
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    border-left-color: #e74c3c;
+}
+
+body.dark-mode .map-container {
+    border: 2px solid rgba(139, 154, 255, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .map-container::before {
+    color: #8b9aff;
+}
+
+body.dark-mode .layer-toggle {
+    color: #e0e0e0;
+    background: rgba(139, 154, 255, 0.1);
+    border: 1px solid rgba(139, 154, 255, 0.2);
+}
+
+body.dark-mode .layer-toggle:hover {
+    background: rgba(139, 154, 255, 0.2);
+    border-color: rgba(139, 154, 255, 0.4);
+}
+
+body.dark-mode .location-btn {
+    background: linear-gradient(135deg, #8b9aff 0%, #a78bfa 100%);
+    box-shadow: 0 4px 8px rgba(139, 154, 255, 0.4);
+}
+
+body.dark-mode .location-btn:hover {
+    box-shadow: 0 6px 12px rgba(139, 154, 255, 0.5);
+}
+
+body.dark-mode .location-status.info {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+body.dark-mode .location-status.success {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+}
+
+body.dark-mode .location-status.error {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+body.dark-mode .weather-card {
+    background: #2a2a3e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .weather-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    border-color: rgba(139, 154, 255, 0.3);
+}
+
+body.dark-mode .weather-value {
+    color: #8b9aff;
+}
+
+body.dark-mode .weather-card:hover .weather-value {
+    color: #a78bfa;
+}
+
+body.dark-mode .rainfall-section {
+    background: #2a2a3e;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .rainfall-section h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .prediction-form {
+    background: #2a2a3e;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .form-group label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-input {
+    background: #1a1a2e;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-input:focus {
+    border-color: #8b9aff;
+    box-shadow: 0 0 0 3px rgba(139, 154, 255, 0.2), 0 4px 8px rgba(139, 154, 255, 0.1);
+    background: #1e1e2e;
+}
+
+body.dark-mode .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode .submit-button {
+    background: linear-gradient(135deg, #8b9aff 0%, #a78bfa 100%);
+}
+
+body.dark-mode .submit-button:hover {
+    background: linear-gradient(135deg, #7a8aff 0%, #967afa 100%);
+    box-shadow: 0 8px 16px rgba(139, 154, 255, 0.4);
+}
+
+body.dark-mode .risk-card {
+    background: #2a2a3e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .risk-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .alert-banner {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: white;
+}
+
+body.dark-mode .alert-banner.warning {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+body.dark-mode .marker-tooltip {
+    background: rgba(26, 26, 46, 0.95) !important;
+    border: 1px solid rgba(139, 154, 255, 0.3);
+}
+
+body.dark-mode .user-location-tooltip {
+    background: rgba(231, 76, 60, 0.95) !important;
+}
+
+body.dark-mode .error-message {
+    color: #ff6b6b;
+}
+
+/* Dark mode toggle icon styling */
+body.dark-mode .dark-mode-toggle .toggle-icon {
+    filter: brightness(1.2);
+}
+
+/* Smooth transition for dark mode */
+body,
+body * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Override transitions for elements that shouldn't transition */
+body.dark-mode .card::before,
+body.dark-mode .weather-card::before,
+body.dark-mode .sos-button::before,
+body.dark-mode .sos-button::after {
+    transition: none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather - Disaster Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Disaster Management</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sos.html" class="nav-link">SOS</a></li>
+                <li><a href="map.html" class="nav-link">Map</a></li>
+                <li><a href="weather.html" class="nav-link active">Weather</a></li>
+                <li><a href="predict.html" class="nav-link">Predict</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="toggle-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="weather-section">
+            <h2 class="section-heading">Weather Information</h2>
+            
+            <div class="weather-cards">
+                <div class="weather-card">
+                    <h3>Temperature</h3>
+                    <p class="weather-value">28°C</p>
+                </div>
+                <div class="weather-card">
+                    <h3>Humidity</h3>
+                    <p class="weather-value">65%</p>
+                </div>
+                <div class="weather-card">
+                    <h3>Wind Speed</h3>
+                    <p class="weather-value">15 km/h</p>
+                </div>
+            </div>
+
+            <div class="rainfall-section">
+                <h3>Rainfall Graph</h3>
+                <canvas id="rainfallChart" class="rainfall-chart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="darkMode.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html>

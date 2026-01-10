@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Map - Disaster Management</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 
+        IMPORTANT: Replace YOUR_API_KEY with your actual Google Maps API key
+        Get your API key from: https://console.cloud.google.com/google/maps-apis
+        Make sure to enable "Maps JavaScript API" in your Google Cloud Console
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Disaster Management</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sos.html" class="nav-link">SOS</a></li>
+                <li><a href="map.html" class="nav-link active">Map</a></li>
+                <li><a href="weather.html" class="nav-link">Weather</a></li>
+                <li><a href="predict.html" class="nav-link">Predict</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="toggle-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="map-section">
+            <h2 class="section-heading">Live Disaster Map</h2>
+            
+            <div class="map-controls">
+                <label class="layer-toggle">
+                    <input type="checkbox" id="floodLayer" checked>
+                    <span>Flood Zones</span>
+                </label>
+                <label class="layer-toggle">
+                    <input type="checkbox" id="windLayer" checked>
+                    <span>Wind Alerts</span>
+                </label>
+                <label class="layer-toggle">
+                    <input type="checkbox" id="riverLayer" checked>
+                    <span>River Levels</span>
+                </label>
+                <button id="getLocationBtn" class="location-btn">
+                    <span class="location-icon">📍</span>
+                    <span>My Location</span>
+                </button>
+            </div>
+            
+            <div id="locationStatus" class="location-status"></div>
+
+            <div id="mapContainer" class="map-container"></div>
+        </section>
+    </main>
+
+    <script src="darkMode.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency SOS - Disaster Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Disaster Management</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sos.html" class="nav-link active">SOS</a></li>
+                <li><a href="map.html" class="nav-link">Map</a></li>
+                <li><a href="weather.html" class="nav-link">Weather</a></li>
+                <li><a href="predict.html" class="nav-link">Predict</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="toggle-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="sos-section">
+            <h2 class="section-heading">Emergency SOS</h2>
+            <p class="section-text">Click the button below to send an emergency alert</p>
+            
+            <div class="sos-button-container">
+                <button id="sosButton" class="sos-button">SOS</button>
+            </div>
+
+            <div class="emergency-info">
+                <h3>Emergency Contacts</h3>
+                <div class="contact-card">
+                    <strong>Police:</strong> 100
+                </div>
+                <div class="contact-card">
+                    <strong>Fire:</strong> 101
+                </div>
+                <div class="contact-card">
+                    <strong>Ambulance:</strong> 102
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="darkMode.js"></script>
+    <script src="sos.js"></script>
+</body>
+</html>

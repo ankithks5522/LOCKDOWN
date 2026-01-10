@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Prediction - Disaster Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Disaster Management</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sos.html" class="nav-link">SOS</a></li>
+                <li><a href="map.html" class="nav-link">Map</a></li>
+                <li><a href="weather.html" class="nav-link">Weather</a></li>
+                <li><a href="predict.html" class="nav-link active">Predict</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="toggle-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="predict-section">
+            <h2 class="section-heading">Disaster Risk Prediction</h2>
+            
+            <form class="prediction-form">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" class="form-input" placeholder="Enter location">
+                </div>
+                <div class="form-group">
+                    <label for="disasterType">Disaster Type</label>
+                    <select id="disasterType" class="form-input">
+                        <option value="flood">Flood</option>
+                        <option value="wind">Wind</option>
+                        <option value="earthquake">Earthquake</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button">Predict Risk</button>
+            </form>
+
+            <div class="risk-cards">
+                <div class="risk-card flood-risk low">
+                    <h3>Flood Risk</h3>
+                    <p class="risk-level">Low</p>
+                </div>
+                <div class="risk-card wind-risk medium">
+                    <h3>Wind Risk</h3>
+                    <p class="risk-level">Medium</p>
+                </div>
+                <div class="risk-card river-risk high">
+                    <h3>River Risk</h3>
+                    <p class="risk-level">High</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="darkMode.js"></script>
+    <script src="predict.js"></script>
+</body>
+</html>

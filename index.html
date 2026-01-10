@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Disaster Management</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="sos.html" class="nav-link">SOS</a></li>
+                <li><a href="map.html" class="nav-link">Map</a></li>
+                <li><a href="weather.html" class="nav-link">Weather</a></li>
+                <li><a href="predict.html" class="nav-link">Predict</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="toggle-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <h2 class="section-heading">Emergency Response System</h2>
+            <p class="section-text">Stay informed and prepared for natural disasters</p>
+        </section>
+
+        <section class="cards-section">
+            <div class="card">
+                <h3>Emergency SOS</h3>
+                <p>Get immediate help in emergency situations</p>
+            </div>
+            <div class="card">
+                <h3>Live Map</h3>
+                <p>View real-time disaster information</p>
+            </div>
+            <div class="card">
+                <h3>Weather Updates</h3>
+                <p>Current weather conditions and forecasts</p>
+            </div>
+            <div class="card">
+                <h3>Risk Prediction</h3>
+                <p>AI-powered disaster risk assessment</p>
+            </div>
+        </section>
+
+        <section class="alert-section">
+            <div class="alert-banner warning">
+                <strong>Warning:</strong> High flood risk detected in your area
+            </div>
+        </section>
+    </main>
+
+    <script src="darkMode.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
