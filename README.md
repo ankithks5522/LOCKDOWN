@@ -10,20 +10,19 @@
 
 - **Team Name:**  
 - **Team Members:**  
-  - Member 1 – Register No  
-  - Member 2 – Register No  
-  - Member 3 – Register No  
-  - Member 4 – Register No (if applicable)
+  - Member 1 – ANKITH K SANTHOSH
+  - Member 2 – AKASH MM  
+  - Member 3 – GOKUL S KRISHNA 
+  - Member 4 – ANAGHA SASIKUMAR
 
 - **Problem Domain:**  
 - **Selected Problem Statement:**  
-
+During natural disasters or emergency situations, critical information is often scattered, delayed, or unreliable, leading to poor coordination and increased risk to lives.The absence of timely, centralized, and trustworthy information creates confusion among citizens and responders during emergencies.
 ---
 
 ## 🧩 Problem Description
 
-Briefly describe the problem you are addressing.  
-Explain the background and why this problem is relevant.
+During natural disasters and emergencies, timely and accurate information is essential for effective response and public safety. However, critical details such as warnings, rescue updates, and resource availability are often scattered, delayed, or unreliable. This lack of a centralized and trustworthy information system creates confusion among citizens and emergency responders. As a result, coordination becomes inefficient, response time increases, and the risk to human life and property is significantly heightened.
 
 ---
 
