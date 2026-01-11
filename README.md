@@ -31,8 +31,11 @@ During natural disasters and emergencies, timely and accurate information is ess
 
 Describe your solution clearly:
 - What is your approach?
+- Creation of an application to create a centralized emergency sos system.
 - How does it solve the problem?
+- creation of a centralized system enables a single authority or government to control the situation .
 - Key idea behind the solution.
+- sos messages,weather alerts live location tracking etc.
 
 ---
 
